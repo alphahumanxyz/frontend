@@ -12,10 +12,8 @@ import {
   ARCHIVED_FOLDER_ID,
   BETA_CHANGELOG_URL,
   FEEDBACK_URL,
-  IS_BETA,
   IS_TEST,
   PRODUCTION_HOSTNAME,
-  WEB_VERSION_BASE,
 } from '../../../config';
 import {
   INITIAL_PERFORMANCE_STATE_MAX,
@@ -144,12 +142,18 @@ const LeftSideMenuItems = ({
     openSummarizePage();
   });
 
-  const handleOpenAlphaHumanPlans = useLastCallback(() => {
+  const handleStarOnGithub = useLastCallback(() => {
     const globalToken = getGlobal().alphahuman?.jwtToken;
     if (globalToken) {
-      openUrl({ url: `https://alphahuman.xyz/pricing?token=${globalToken}` });
+      openUrl({ url: `https://github.com/alphahumanxyz/frontend` });
     }
   });
+  // const handleOpenSourceCode = useLastCallback(() => {
+  //   const globalToken = getGlobal().alphahuman?.jwtToken;
+  //   if (globalToken) {
+  //     openUrl({ url: `https://alphahuman.xyz/pricing?token=${globalToken}` });
+  //   }
+  // });
 
   return (
     <>
@@ -192,12 +196,12 @@ const LeftSideMenuItems = ({
       >
         {lang('MenuContacts')}
       </MenuItem>
-      <MenuItem
+      {/* <MenuItem
         icon="search"
         onClick={handleOpenSummarize}
       >
         AI Summaries
-      </MenuItem>
+      </MenuItem> */}
       {bots.map((bot) => (
         <AttachBotItem
           bot={bot}
@@ -241,9 +245,9 @@ const LeftSideMenuItems = ({
       </MenuItem>
       <MenuItem
         icon="document"
-        onClick={handleOpenAlphaHumanPlans}
+        onClick={handleStarOnGithub}
       >
-        AlphaHuman Plans
+        Star on Github
       </MenuItem>
       <MenuItem
         icon="bug"
@@ -251,24 +255,6 @@ const LeftSideMenuItems = ({
       >
         {lang('MenuReportBug')}
       </MenuItem>
-      {IS_BETA && (
-        <MenuItem
-          icon="permissions"
-          onClick={handleChangelogClick}
-        >
-          {lang('MenuBetaChangelog')}
-        </MenuItem>
-      )}
-      {withOtherVersions && (
-        <MenuItem
-          icon="K"
-          isCharIcon
-          href={`${WEB_VERSION_BASE}k`}
-          onClick={handleSwitchToWebK}
-        >
-          {lang('MenuSwitchToK')}
-        </MenuItem>
-      )}
       {canInstall && (
         <MenuItem
           icon="install"
