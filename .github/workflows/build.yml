@@ -1,0 +1,45 @@
+name: Build
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build project
+        run: yarn build:production
+        env:
+          NODE_ENV: test
+          TELEGRAM_API_ID: 0000000
+          TELEGRAM_API_HASH: 0000000
+          ALPHAHUMAN_BOT_ID: 0000000
+          ALPHAHUMAN_BOT_USERNAME: 0000000
+          BASE_URL: https://web.telegram.org/a/
+          BACKEND_API_URL: https://staging-api.alphahuman.xyz
