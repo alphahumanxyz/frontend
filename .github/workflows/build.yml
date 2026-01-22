@@ -9,6 +9,8 @@ on:
 permissions:
   contents: read
   pull-requests: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.head_ref || github.ref }}
@@ -17,6 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Production
 
     steps:
       - name: Checkout code
@@ -36,10 +39,22 @@ jobs:
       - name: Build project
         run: yarn build:production
         env:
-          NODE_ENV: test
-          TELEGRAM_API_ID: 0000000
-          TELEGRAM_API_HASH: 0000000
-          ALPHAHUMAN_BOT_ID: 0000000
-          ALPHAHUMAN_BOT_USERNAME: 0000000
-          BASE_URL: https://web.telegram.org/a/
-          BACKEND_API_URL: https://staging-api.alphahuman.xyz
+          NODE_ENV: production
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          ALPHAHUMAN_BOT_ID: ${{ secrets.ALPHAHUMAN_BOT_ID }}
+          ALPHAHUMAN_BOT_USERNAME: ${{ secrets.ALPHAHUMAN_BOT_USERNAME }}
+          BASE_URL: ${{ vars.BASE_URL || 'https://web.telegram.org/a/' }}
+          BACKEND_API_URL: ${{ vars.BACKEND_API_URL || 'https://staging-api.alphahuman.xyz' }}
+
+      - name: Setup Pages
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v4
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: telegram.alphahuman.xyz
