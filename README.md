@@ -1,10 +1,26 @@
-# Telegram Web A
+# AlphaHuman Telegram Web Client
 
-This project won the first prize 🥇 at [Telegram Lightweight Client Contest](https://contest.com/javascript-web-3) and now is an official Telegram client available to anyone at [web.telegram.org/a](https://web.telegram.org/a).
+AlphaHuman is an AI-powered Telegram client built on top of the award-winning Telegram Web A frontend. This project extends the original Telegram Web A with advanced AI capabilities, enhanced user experience features, and custom integrations.
 
-According to the original contest rules, it has nearly zero dependencies and is fully based on its own [Teact](https://github.com/Ajaxy/teact) framework (which re-implements React paradigm). It also uses a custom version of [GramJS](https://github.com/gram-js/gramjs) as an MTProto implementation.
+## Credits
 
-The project incorporates lots of technologically advanced features, modern Web APIs and techniques: WebSockets, Web Workers and WebAssembly, multi-level caching and PWA, voice recording and media streaming, cryptography and raw binary data operations, optimistic and progressive interfaces, complicated CSS/Canvas/SVG animations, reactive data streams, and so much more.
+This project is based on **Telegram Web A**, which won the first prize 🥇 at [Telegram Lightweight Client Contest](https://contest.com/javascript-web-3) and is now an official Telegram client available at [web.telegram.org/a](https://web.telegram.org/a).
+
+We extend our gratitude to the original Telegram Web A project and its contributors for creating this excellent foundation. According to the original contest rules, it has nearly zero dependencies and is fully based on its own [Teact](https://github.com/Ajaxy/teact) framework (which re-implements React paradigm). It also uses a custom version of [GramJS](https://github.com/gram-js/gramjs) as an MTProto implementation.
+
+The original project incorporates lots of technologically advanced features, modern Web APIs and techniques: WebSockets, Web Workers and WebAssembly, multi-level caching and PWA, voice recording and media streaming, cryptography and raw binary data operations, optimistic and progressive interfaces, complicated CSS/Canvas/SVG animations, reactive data streams, and so much more.
+
+## AlphaHuman Features
+
+AlphaHuman extends Telegram Web A with:
+
+- **AI-Powered Assistance**: Advanced AI integration for intelligent chat assistance and automation
+- **Enhanced User Experience**: Improved UI/UX with modern design patterns
+- **Custom Integrations**: Connectors for Notion, Google Sheets, and other productivity tools
+- **Multiple LLM Support**: Integration with Claude, ChatGPT, and custom MCP servers
+- **Advanced Token Analysis**: Trading insights and token analysis capabilities
+- **Subscription Management**: Built-in payment plans and subscription options
+- **And much more**: Continuous improvements and feature additions
 
 Feel free to explore, provide feedback and contribute.
 
