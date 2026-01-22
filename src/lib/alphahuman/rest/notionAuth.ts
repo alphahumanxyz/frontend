@@ -11,5 +11,5 @@ export interface NotionOAuthResponse {
  * @returns Promise that resolves with OAuth URL and state token
  */
 export async function connectNotionRest(): Promise<NotionOAuthResponse> {
-  return makeRestRequest<void, NotionOAuthResponse>('GET', '/api/auth/notion/connect');
+  return makeRestRequest<void, NotionOAuthResponse>('GET', '/auth/notion/connect');
 }

@@ -11,5 +11,5 @@ export interface GoogleOAuthResponse {
  * @returns Promise that resolves with OAuth URL and state token
  */
 export async function connectGoogleRest(): Promise<GoogleOAuthResponse> {
-  return makeRestRequest<void, GoogleOAuthResponse>('GET', '/api/auth/google/connect');
+  return makeRestRequest<void, GoogleOAuthResponse>('GET', '/auth/google/connect');
 }
