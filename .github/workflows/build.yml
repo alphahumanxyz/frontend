@@ -44,8 +44,8 @@ jobs:
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
           ALPHAHUMAN_BOT_ID: ${{ secrets.ALPHAHUMAN_BOT_ID }}
           ALPHAHUMAN_BOT_USERNAME: ${{ secrets.ALPHAHUMAN_BOT_USERNAME }}
-          BASE_URL: ${{ vars.BASE_URL || 'https://web.telegram.org/a/' }}
-          BACKEND_API_URL: ${{ vars.BACKEND_API_URL || 'https://staging-api.alphahuman.xyz' }}
+          BASE_URL: ${{ vars.BASE_URL || 'https://telegram.alphahuman.xyz' }}
+          BACKEND_API_URL: ${{ vars.BACKEND_API_URL || 'https://api.alphahuman.xyz' }}
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
