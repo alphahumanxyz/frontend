@@ -1,0 +1,2 @@
+(self.webpackChunkalphahuman_telegram=self.webpackChunkalphahuman_telegram||[]).push([[3906],{19601(a){a.exports=function(a){return{name:"Clojure REPL",contains:[{className:"meta.prompt",begin:/^([\w.-]+|\s*#_)?=>/,starts:{end:/$/,subLanguage:"clojure"}}]}}}}]);
+//# sourceMappingURL=3906.f1eaa2fee0b5cdb8a766.js.map

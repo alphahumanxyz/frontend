@@ -1,0 +1,2 @@
+(self.webpackChunkalphahuman_telegram=self.webpackChunkalphahuman_telegram||[]).push([[69],{67172(a){a.exports=function(a){return{name:"LDIF",contains:[{className:"attribute",match:"^dn(?=:)",relevance:10},{className:"attribute",match:"^\\w+(?=:)"},{className:"literal",match:"^-"},a.HASH_COMMENT_MODE]}}}}]);
+//# sourceMappingURL=69.648f3f970f9aa8241dec.js.map

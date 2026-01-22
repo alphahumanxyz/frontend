@@ -1,0 +1,2 @@
+(self.webpackChunkalphahuman_telegram=self.webpackChunkalphahuman_telegram||[]).push([[7612],{20283(a){a.exports=function(a){return{aliases:["pycon"],contains:[{className:"meta.prompt",starts:{end:/ |$/,starts:{end:"$",subLanguage:"python"}},variants:[{begin:/^>>>(?=[ ]|$)/},{begin:/^\.\.\.(?=[ ]|$)/}]}]}}}}]);
+//# sourceMappingURL=7612.e31654890c52973e04eb.js.map

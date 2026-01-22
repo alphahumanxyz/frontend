@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkalphahuman_telegram=self.webpackChunkalphahuman_telegram||[]).push([[2263],{82263(a,e,n){n.d(e,{relaunch:()=>u});var s=n(55962);async function u(){await(0,s.invoke)("plugin:process|restart")}}}]);
+//# sourceMappingURL=2263.1faa54b4fae1f21c0a59.js.map

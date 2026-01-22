@@ -1,0 +1,2 @@
+(self.webpackChunkalphahuman_telegram=self.webpackChunkalphahuman_telegram||[]).push([[9141],{10164(a){a.exports=function(a){return{name:"VBScript in HTML",subLanguage:"xml",contains:[{begin:"<%",end:"%>",subLanguage:"vbscript"}]}}}}]);
+//# sourceMappingURL=9141.80248a79109eb2afdaed.js.map

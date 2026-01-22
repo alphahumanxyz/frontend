@@ -1,0 +1,2 @@
+(self.webpackChunkalphahuman_telegram=self.webpackChunkalphahuman_telegram||[]).push([[1095],{56078(e){e.exports=function(e){return{name:"Mojolicious",subLanguage:"xml",contains:[{className:"meta",begin:"^__(END|DATA)__$"},{begin:"^\\s*%{1,2}={0,2}",end:"$",subLanguage:"perl"},{begin:"<%{1,2}={0,2}",end:"={0,1}%>",subLanguage:"perl",excludeBegin:!0,excludeEnd:!0}]}}}}]);
+//# sourceMappingURL=1095.b4d9bdc59cb3b059fc3f.js.map
