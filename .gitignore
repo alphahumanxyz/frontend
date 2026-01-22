@@ -1,0 +1,16 @@
+dist/build-stats.json
+node_modules
+.cache
+.env
+src/lib/gramjs/build/
+build-contest/
+tests/
+.idea
+*.iml
+dev/perf/screenshot*
+.DS_store
+tauri/target/
+tauri/gen
+dist
+public/build-stats.json
+public/statoscope-report.html

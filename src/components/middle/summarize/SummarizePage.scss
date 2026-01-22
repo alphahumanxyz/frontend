@@ -1,0 +1,173 @@
+.SummarizePage {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0.6875rem;
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  &__info-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 15.8125rem;
+    max-width: min(80%, 25rem);
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--color-borders);
+    border-radius: var(--border-radius-messages);
+
+    font-size: calc(var(--message-text-size, 1rem) - 0.0625rem);
+    font-weight: var(--font-weight-normal);
+    color: calc(var(--color-text) - 30%);
+    text-align: center;
+
+    background: var(--color-background);
+  }
+
+  &__info-title {
+    margin: 0 0 0.25rem;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  &__info-description {
+    margin: 0;
+    line-height: 1.4;
+    color: calc(var(--color-text) - 30%);
+    text-wrap: pretty;
+  }
+
+  &__edit-button {
+    position: fixed;
+    z-index: var(--z-chat-float-button);
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 35rem;
+  }
+
+  &__content-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__date-tabs {
+    scrollbar-width: none;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    border: 1px solid var(--color-borders);
+    border-radius: 0.75rem;
+
+    background: var(--color-background);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .TabList {
+      position: static;
+
+      overflow-x: visible;
+      overflow-y: visible;
+      display: flex;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+
+      width: auto;
+      min-width: max-content;
+      padding: 0;
+      border-radius: 0.5rem;
+
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &__loading,
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3rem;
+
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+
+  &__empty-subtitle {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  &__summaries {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__skeleton-card {
+    height: 12rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-borders);
+    border-radius: 0.75rem;
+
+    opacity: 0.6;
+    background: var(--color-background);
+
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

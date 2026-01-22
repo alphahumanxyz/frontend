@@ -1,0 +1,27 @@
+.agentButton {
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &--active {
+    color: white !important;
+    background-color: var(--color-primary) !important;
+
+    &:hover {
+      background-color: var(--color-primary-shade) !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+  }
+}
