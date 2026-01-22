@@ -238,8 +238,8 @@ addActionHandler('selectAlphahumanThreadById', (global, actions, payload): Actio
 });
 
 addActionHandler('addMessageToAlphahumanThread', (global, actions, payload): ActionReturnType => {
-  const { threadId } = payload;
-  return addMessageToAlphahumanThread(global, threadId, payload);
+  const { threadId, message } = payload;
+  return addMessageToAlphahumanThread(global, threadId, message);
 });
 
 addActionHandler('startAlphaHumanLogin', async (global, actions): Promise<void> => {

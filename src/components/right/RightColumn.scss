@@ -12,7 +12,11 @@
 
   background: var(--color-background);
 
-  transition: transform var(--layer-transition);
+  will-change: transform;
+  contain: layout style paint;
+  transition: transform var(--sidebar-enter);
+  backface-visibility: hidden;
+  perspective: 1000px;
 
   body.no-page-transitions &,
   body.no-right-column-animations & {
@@ -22,6 +26,8 @@
   >.Transition {
     overflow: hidden;
     height: calc(100% - var(--header-height));
+    will-change: contents;
+    transform: translateZ(0);
   }
 
   .panel-content {
@@ -117,7 +123,7 @@
     background: black;
 
     @media (max-width: 600px) {
-      transition: opacity var(--layer-transition);
+      transition: opacity var(--backdrop-transition);
 
       body.no-page-transitions &,
       body.no-right-column-animations & {
@@ -167,8 +173,10 @@
     border-left: 1px solid var(--color-borders);
     background: var(--color-background);
     transform: translate3d(var(--right-column-width), 0, 0);
-    transition: transform var(--layer-transition);
+    transition: transform var(--sidebar-enter);
     pointer-events: auto;
+    will-change: transform;
+    backface-visibility: hidden;
 
     body.no-page-transitions &,
     body.no-right-column-animations & {

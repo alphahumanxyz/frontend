@@ -1,9 +1,9 @@
 import type {
   GetMeResponse,
   Highlight,
-  Thread,
-  ThreadMessage,
+  AlphahumanThread,
 } from '../../lib/alphahuman/rest';
+import type { AlphahumanThreadMessage } from '../../lib/alphahuman/types';
 import type { Dispatch, StateReducer } from '../useReducer';
 
 import useReducer from '../useReducer';
@@ -15,14 +15,14 @@ export type AlphahumanState = {
   meError: Error | undefined;
 
   // Threads data
-  threads: Thread[];
+  threads: AlphahumanThread[];
   threadsCount: number;
   threadsLoading: boolean;
   threadsError: Error | undefined;
 
   // Thread messages cache (keyed by threadId)
   threadMessages: Record<string, {
-    messages: ThreadMessage[];
+    messages: AlphahumanThreadMessage[];
     count: number;
   }>;
   threadMessagesLoading: Record<string, boolean>;

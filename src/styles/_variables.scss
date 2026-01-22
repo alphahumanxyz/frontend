@@ -299,11 +299,17 @@ $color-message-story-mention-to: #74bcff;
 
   --layer-blackout-opacity: 0.1;
 
-  --layer-transition: 300ms cubic-bezier(0.33, 1, 0.68, 1);
-  --layer-transition-behind: 300ms cubic-bezier(0.33, 1, 0.68, 1);
-  --slide-transition: 300ms cubic-bezier(0.25, 1, 0.5, 1);
+  --layer-transition: 280ms cubic-bezier(0.2, 0, 0.12, 1);
+  --layer-transition-behind: 320ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --slide-transition: 240ms cubic-bezier(0.16, 1, 0.3, 1);
   --select-transition: 200ms ease-out;
   --chat-transform-transition: 0.2s ease-out;
+
+  /* Premium sidebar animations for Telebiz-quality smoothness */
+  --sidebar-enter: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --sidebar-exit: 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --content-transition: 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  --backdrop-transition: 180ms cubic-bezier(0.4, 0, 0.2, 1);
 
   --safe-area-top: env(safe-area-inset-top);
   --safe-area-right: env(safe-area-inset-right);
@@ -318,9 +324,9 @@ $color-message-story-mention-to: #74bcff;
   --middle-header-panes-height: 0px;
 
   body.is-ios {
-    --layer-transition: 650ms cubic-bezier(0.22, 1, 0.36, 1);
-    --layer-transition-behind: 650ms cubic-bezier(0.33, 1, 0.68, 1);
-    --slide-transition: 450ms cubic-bezier(0.25, 1, 0.5, 1);
+    --layer-transition: 380ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    --layer-transition-behind: 420ms cubic-bezier(0.2, 0, 0.2, 1);
+    --slide-transition: 320ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   body.is-android {

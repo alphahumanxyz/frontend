@@ -73,6 +73,7 @@ enum ContentType {
   Settings,
   Archived,
   Threads,
+  AlphahumanSidebar,
 
   NewGroup,
 
@@ -135,6 +136,9 @@ function LeftColumn({
       break;
     case LeftColumnContent.Threads:
       contentType = ContentType.Threads;
+      break;
+    case LeftColumnContent.AlphahumanSidebar:
+      contentType = ContentType.AlphahumanSidebar;
       break;
     case LeftColumnContent.NewChannelStep1:
     case LeftColumnContent.NewChannelStep2:
@@ -518,6 +522,14 @@ function LeftColumn({
           />
         );
       case ContentType.Threads:
+        return (
+          <AlphahumanSidebar
+            isActive={isActive}
+            currentChatId={currentChatId}
+            onReset={handleReset}
+          />
+        );
+      case ContentType.AlphahumanSidebar:
         return (
           <AlphahumanSidebar
             isActive={isActive}

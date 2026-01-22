@@ -106,17 +106,11 @@ const LeftMainHeader = ({
     openSettingsScreen,
     searchMessagesGlobal,
     closeForumPanel,
-    openChat,
-    openLeftColumnContent,
   } = getActions();
 
   const oldLang = useOldLang();
   const lang = useLang();
   const { isMobile } = useAppLayout();
-
-  const handleGoHome = useLastCallback(() => {
-    openLeftColumnContent({ contentKey: LeftColumnContent.Threads });
-  });
 
   const areContactsVisible = content === LeftColumnContent.Contacts;
   const hasMenu = content === LeftColumnContent.ChatList;
@@ -306,16 +300,6 @@ const LeftMainHeader = ({
             iconName="lock"
           />
         )}
-        <Button
-          round
-          ripple={!isMobile}
-          size="smaller"
-          color="translucent"
-          className="home-button"
-          onClick={handleGoHome}
-          ariaLabel={lang('AriaLabelBackChatList')}
-          iconName="bots"
-        />
         <ShowTransition
           isOpen={connectionStatusPosition === 'overlay'}
           isCustom

@@ -160,7 +160,7 @@ const App = ({
 
   // return <Test />;
 
-  let activeKey: AppScreens;
+  let activeKey: AppScreens = AppScreens.auth;
   let page: UiLoaderPage | undefined;
 
   // Check for OAuth callback first - scalable for multiple providers

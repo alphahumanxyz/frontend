@@ -116,6 +116,7 @@ const RightColumn: FC<OwnProps & StateProps> = ({
   const containerRef = useRef<HTMLDivElement>();
 
   const { width: windowWidth } = useWindowSize();
+
   const [profileState, setProfileState] = useState<ProfileState>(
     isSavedMessages && !isSavedDialog ? ProfileState.SavedDialogs : ProfileState.Profile,
   );
@@ -125,6 +126,43 @@ const RightColumn: FC<OwnProps & StateProps> = ({
   const isScrolledDown = profileState !== ProfileState.Profile;
 
   const isOpen = contentKey !== undefined;
+
+  // Performance monitoring for smooth animations
+  useEffect(() => {
+    if (!isOpen || !containerRef.current) return undefined;
+
+    let frameId: number;
+    let lastTime = performance.now();
+    let frameCount = 0;
+    const fpsInterval = 1000; // Check FPS every 1 second
+
+    const monitorFPS = (currentTime: number) => {
+      frameCount++;
+      const deltaTime = currentTime - lastTime;
+
+      if (deltaTime >= fpsInterval) {
+        const fps = Math.round((frameCount * 1000) / deltaTime);
+
+        // Log performance warnings for development
+        if (process.env.NODE_ENV === 'development' && fps < 30) {
+          console.warn(`Right sidebar FPS: ${fps} - Performance below optimal`);
+        }
+
+        frameCount = 0;
+        lastTime = currentTime;
+      }
+
+      frameId = requestAnimationFrame(monitorFPS);
+    };
+
+    frameId = requestAnimationFrame(monitorFPS);
+
+    return () => {
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+    };
+  }, [isOpen]);
   const isProfile = contentKey === RightColumnContent.ChatInfo;
   const isManagement = contentKey === RightColumnContent.Management;
   const isStatistics = contentKey === RightColumnContent.Statistics;

@@ -281,6 +281,7 @@ export enum LeftColumnContent {
   NewChannelStep2,
   NewGroupStep1,
   NewGroupStep2,
+  AlphahumanSidebar,
 }
 
 export enum GlobalSearchContent {

@@ -1,4 +1,4 @@
-import type { ThreadMessage } from '../../lib/alphahuman/rest';
+import type { AlphahumanThreadMessage } from '../../lib/alphahuman/types';
 import type { AlphaHumanManagerState } from '../../lib/alphahuman/types';
 import type { GlobalState } from '../types';
 
@@ -113,7 +113,7 @@ function getTargetThreadId<T extends GlobalState>(
 export function addMessageToAlphahumanThread<T extends GlobalState>(
   global: T,
   threadId: string,
-  message: ThreadMessage,
+  message: AlphahumanThreadMessage,
 ): T {
   const currentState = global.alphahuman;
   if (!currentState) return global;

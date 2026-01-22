@@ -22,6 +22,7 @@ import useShowTransitionDeprecated from '../../../hooks/useShowTransitionDepreca
 import Button from '../../ui/Button';
 import Transition from '../../ui/Transition';
 import NewChatButton from '../NewChatButton';
+import MagicButton from '../MagicButton';
 import LeftSearch from '../search/LeftSearch.async';
 import ChatFolders from './ChatFolders';
 import ContactList from './ContactList.async';
@@ -253,10 +254,14 @@ const LeftMain: FC<OwnProps> = ({
         />
       )}
       <NewChatButton
-        isShown={isNewChatButtonShown}
+        isShown={true}
         onNewPrivateChat={handleSelectContacts}
         onNewChannel={handleSelectNewChannel}
         onNewGroup={handleSelectNewGroup}
+        isAccountFrozen={isAccountFrozen}
+      />
+      <MagicButton
+        isShown={true}
         isAccountFrozen={isAccountFrozen}
       />
     </div>
